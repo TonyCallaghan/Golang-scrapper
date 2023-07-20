@@ -2,8 +2,12 @@ package main
 
 import (
 	"github.com/tonyc/scrape/core"
+	"log"
 )
 
 func main() {
-	core.Execute()
+	err := core.Execute()
+	if err != nil {
+		log.Fatalf("Failed to execute core: %v", err)
+	}
 }
